@@ -24,22 +24,26 @@ class _anaSayfaState extends State<anaSayfa> {
   Widget currentScreen = MyHomePage();
   @override
   Widget build(BuildContext context) {
+    bool klavyeDurum = MediaQuery.of(context).viewInsets.bottom !=0;
     return Scaffold(
 
       body: PageStorage(
         child: currentScreen,
         bucket: bucket,
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepPurple,
-        child: const Icon(Icons.account_balance),
-        onPressed: (){
-          setState(() {
-            currentScreen = MyHomePage();
-            curretTab = 4;
-          });
+      floatingActionButton:  Visibility(
+        visible: !klavyeDurum,
+        child: FloatingActionButton(
+          backgroundColor: Colors.deepPurple,
+          child: const Icon(Icons.account_balance),
+          onPressed: (){
+            setState(() {
+              currentScreen = MyHomePage();
+              curretTab = 4;
+            });
 
-        },
+          },
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
