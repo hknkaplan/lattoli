@@ -35,12 +35,12 @@ class _tumKelimelerState extends State<tumKelimeler> {
     if(gelenK.kelime_goruntulenme!=0){
       oran = ((100*gelenK.kelime_dogruC)~/gelenK.kelime_goruntulenme).toInt();
       //return  Text("%${oran.toString()}",style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color:Colors.green),);
-      return  Container(child: new CircularPercentIndicator(
+      return  Container(child:  CircularPercentIndicator(
         radius: 20.0,
         lineWidth: 5.0,
         animation: true,
         percent: oran/100,
-        center: new Text("$oran",style: TextStyle(fontSize: 15),),
+        center:  Text("$oran",style: TextStyle(fontSize: 15),),
         progressColor: Colors.green,
       ));
     }else{

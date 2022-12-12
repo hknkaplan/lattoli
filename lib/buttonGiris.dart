@@ -26,14 +26,17 @@ class _GlowingButtonState extends State<GlowingButton> {
     return GestureDetector(
       onTapUp: (val) {
         setState(() {
-          glowing = false;
-          scale = 1.0;
+          print("geç");
+
+          //glowing = false;
+          //scale = 1.0;
         });
       },
       onTapDown: (val) {
         setState(() {
-          glowing = true;
-          scale = 1.1;
+          print("geç");
+          //glowing = true;
+          //scale = 1.1;
         });
       },
       child: AnimatedContainer(

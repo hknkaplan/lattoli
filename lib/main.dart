@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lattoli/Sayafalar/sinavEkrani.dart';
 import 'package:lattoli/buttonGiris.dart';
+import 'package:path/path.dart';
 import 'anaSayfa.dart';
 
 void main() {
@@ -63,11 +65,25 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             //Icon(Icons.supervised_user_circle,size: ekranGenisligi/2,),
             SizedBox(height: ekranYuksekligi/2, child: Image.asset("Resimler/latif.png")),
-            const Padding(
-              padding:  EdgeInsets.only(bottom: 25.0),
-              child: GlowingButton(
-                color1: Colors.orange,
-                color2: Colors.red,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 40.0),
+              child: SizedBox( width: 250, height: 60,
+                child: ElevatedButton(
+                  child: const Text("BASLA"),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.deepOrange,
+                    textStyle: GoogleFonts.rubikPuddles(textStyle: TextStyle(fontSize: ekranGenisligi/12, fontWeight: FontWeight.bold, color: Colors.deepPurple) ),
+                    elevation: 20,
+                    shadowColor: Colors.deepOrange,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0)),
+                  ),
+                  onPressed: (){
+
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => sinavEkrani()));
+                  },
+
+                ),
               ),
             ),
 
